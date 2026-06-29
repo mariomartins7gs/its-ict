@@ -6,7 +6,9 @@ internal class Program
     {
         Console.WriteLine("=== ESERCIZIO — FileTesto Lettura ===\n");
 
-        string filePath = @"C:\file\Frase.txt";
+        // Stessa cartella della versione scrittura: Documenti > file > Frase.txt
+        string docsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        string filePath = Path.Combine(docsPath, "file", "Frase.txt");
 
         // Controllo se il file esiste
         if (!File.Exists(filePath))

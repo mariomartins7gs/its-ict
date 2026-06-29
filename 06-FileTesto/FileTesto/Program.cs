@@ -1,5 +1,3 @@
-using System.IO;
-
 namespace FileTesto;
 
 internal class Program
@@ -8,8 +6,9 @@ internal class Program
     {
         Console.WriteLine("=== ESERCIZIO — FileTesto Scrittura ===\n");
 
-        // Crea la cartella C:\file se non esiste
-        string folderPath = @"C:\file";
+        // Usa la cartella Documenti dell'utente (nessun permesso admin richiesto)
+        string docsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        string folderPath = Path.Combine(docsPath, "file");
         string filePath = Path.Combine(folderPath, "Frase.txt");
 
         Directory.CreateDirectory(folderPath);
