@@ -36,6 +36,9 @@ string percorsoCsv = Path.Combine(
 
 percorsoCsv = Path.GetFullPath(percorsoCsv);
 
+// Crea la cartella File/ se non esiste
+Directory.CreateDirectory(Path.GetDirectoryName(percorsoCsv)!);
+
 ServizioFile.ScriviPersona(percorsoCsv, persona);
 
 Console.WriteLine($"\n💾 Dati salvati in: {percorsoCsv}");
