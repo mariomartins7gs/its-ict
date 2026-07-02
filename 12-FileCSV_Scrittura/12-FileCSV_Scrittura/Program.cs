@@ -45,5 +45,5 @@ Console.WriteLine($"\n💾 Dati salvati in: {percorsoCsv}");
 
 ServizioFile.MostraFile(percorsoCsv);
 
-Console.WriteLine("\nPremi un tasto per uscire...");
-Console.ReadKey();
+Console.WriteLine("\nPremi INVIO per uscire...");
+Console.ReadLine();
