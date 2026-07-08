@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GestioneMessaggi.MessaggioBase" Collapsed="true">
+    <Position X="4.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAEAAgAAAgIAAgICBAAAAAAgAAA=</HashCode>
+      <FileName>MessaggioBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestioneMessaggi.Messaggio" Collapsed="true">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAEAAAEAAgAAAgIAAgICBAAAAEAgAAg=</HashCode>
+      <FileName>Messaggio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestioneMessaggi.ArchivioMessaggi" Collapsed="true">
+    <Position X="7" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAABAAABAAACAAACAgAAAgAAAgAEAAAEAAAB=</HashCode>
+      <FileName>ArchivioMessaggi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="GestioneMessaggi.Priorita" Collapsed="true">
+    <Position X="1.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Priorita.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
