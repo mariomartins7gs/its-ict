@@ -1,0 +1,32 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# .NET
+*.csproj.user
+*.dbmdl
+*.jfm
+
+# NuGet
+packages/
+*.nupkg
+**/[Pp]ackages/*
+
+# Temp files
+*.tmp
+*.log
+*.tlog
+
+# IDE
+.idea/
+*.swp
+*~
