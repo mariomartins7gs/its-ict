@@ -5,7 +5,7 @@ ESERCITAZIONE: Martins_Esercitazione1
 DATA: 09/07/2026
 STUDENTE: Mario Martins
 
-Prompt utilizzati con assistente AI (Lucia):
+Prompt utilizzati con AI:
 
 1) "Genera dati di test per un gestionale officina auto e moto C#:
    - 1 responsabile venditori (nome, cognome, stipendio ~3500, settore Auto)

@@ -1,0 +1,11 @@
+﻿Ordine: UMTRTPFB
+Data: 05/06/2026
+Venditore: Sara Gallo
+-----------------------------------------------------------------
+Codice   Prodotto               Qta   Prezzo     Subtotale   
+-----------------------------------------------------------------
+P002     Freno a disco anteriore 2        85,00 euro    170,00 euro
+P007     Pastiglie Freno        2        35,00 euro     70,00 euro
+P003     Batteria 12V 60Ah      1       120,00 euro    120,00 euro
+-----------------------------------------------------------------
+TOTALE ORDINE:                             360,00 euro

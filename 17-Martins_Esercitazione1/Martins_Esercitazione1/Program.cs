@@ -29,8 +29,8 @@ namespace Martins_Esercitazione1
             {
                 Console.Clear();
                 Console.WriteLine("╔══════════════════════════════════════╗");
-                Console.WriteLine("║       OFFICINA AUTO & MOTO          ║");
-                Console.WriteLine("║         Gestionale v1.0             ║");
+                Console.WriteLine("║       OFFICINA AUTO & MOTO           ║");
+                Console.WriteLine("║         Gestionale v1.0              ║");
                 Console.WriteLine("╚══════════════════════════════════════╝");
                 Console.WriteLine();
                 Console.WriteLine("1] Visualizza dati Responsabile Venditori");
