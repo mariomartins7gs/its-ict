@@ -59,11 +59,11 @@ namespace LinqLambdaExpression
             Console.WriteLine("Caricamento dei dati avvenuta con successo!");
             Console.WriteLine();
 
-            //operazioni Lambda
+            // ── Operazioni con LINQ (lambda / method syntax) ──
             Console.WriteLine("Elenco dei numeri generati");
             Console.WriteLine(string.Join(", ", numeri));
             Console.WriteLine();
-            Console.WriteLine($"Numeri generati: {numeri.Count}");
+            Console.WriteLine($"Numeri generati: {numeri.Count()}");
             Console.WriteLine();
             Console.WriteLine($"Max: {numeri.Max()}");
             Console.WriteLine();
@@ -72,22 +72,37 @@ namespace LinqLambdaExpression
             Console.WriteLine($"Somma: {numeri.Sum()}");
 
             Console.WriteLine();
+            // ── Query expression syntax ──
             var query1 = from positivi in numeri
                          where positivi > 0
                          select positivi;
-            Console.WriteLine($"Somma dei numeri solo positivi: {query1.Sum()}");
+            Console.WriteLine($"Somma positivi (query): {query1.Sum()}");
+
+            // ── Lambda expression syntax EQUIVALENTE ──
+            var positiviLambda = numeri.Where(n => n > 0);
+            Console.WriteLine($"Somma positivi (lambda): {positiviLambda.Sum()}");
 
             Console.WriteLine();
+            // ── Query expression syntax ──
             var query2 = from dispari in numeri
                          where dispari % 2 != 0
                          select dispari;
-            Console.WriteLine($"Elenco dei numeri dispari: {string.Join(", ", query2)}");
+            Console.WriteLine($"Dispari (query): {string.Join(", ", query2)}");
+
+            // ── Lambda expression syntax EQUIVALENTE ──
+            var dispariLambda = numeri.Where(n => n % 2 != 0);
+            Console.WriteLine($"Dispari (lambda): {string.Join(", ", dispariLambda)}");
 
             Console.WriteLine();
+            // ── Query expression syntax ──
             var query3 = from multipli3 in numeri
                          where multipli3 % 3 == 0
                          select multipli3;
-            Console.WriteLine($"Multipli di 3 trovati: {query3.Count()} ==> {string.Join(", ", query3)}");
+            Console.WriteLine($"Multipli di 3 (query): {query3.Count()} ==> {string.Join(", ", query3)}");
+
+            // ── Lambda expression syntax EQUIVALENTE ──
+            var multipli3Lambda = numeri.Where(n => n % 3 == 0);
+            Console.WriteLine($"Multipli di 3 (lambda): {multipli3Lambda.Count()} ==> {string.Join(", ", multipli3Lambda)}");
         }
     }
 }
