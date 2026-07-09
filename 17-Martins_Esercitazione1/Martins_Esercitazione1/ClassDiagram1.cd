@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Martins_Esercitazione1.Models.Persona" Collapsed="true">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAEAAAABAAAAAAAAAAAgAAAAAEAAAA=</HashCode>
+      <FileName>Models\Persona.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Martins_Esercitazione1.Models.Venditore" Collapsed="true">
+    <Position X="2" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAEAAAAAAACAAAAgAAAAAAAABA=</HashCode>
+      <FileName>Models\Venditore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Martins_Esercitazione1.Models.ResponsabileVenditori" Collapsed="true">
+    <Position X="4.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAgABAAAAAAAA=</HashCode>
+      <FileName>Models\ResponsabileVenditori.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Martins_Esercitazione1.Models.CapoOfficina" Collapsed="true">
+    <Position X="2" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAEAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Models\CapoOfficina.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Martins_Esercitazione1.Models.Prodotto" Collapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAKAAAARAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Prodotto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Martins_Esercitazione1.Models.Ordine" Collapsed="true">
+    <Position X="5.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAARABAAAEAAAAAAAEAAAIQBAAAgAAEAAAAAA=</HashCode>
+      <FileName>Models\Ordine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Martins_Esercitazione1.Models.Meccanico" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAEgAAAAAAAAAAAAIAAgAAAAAAAAAA=</HashCode>
+      <FileName>Models\Meccanico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Martins_Esercitazione1.Models.SettoreVendita" Collapsed="true">
+    <Position X="6.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Models\Venditore.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Martins_Esercitazione1.Models.TipologiaMeccanico" Collapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Meccanico.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
