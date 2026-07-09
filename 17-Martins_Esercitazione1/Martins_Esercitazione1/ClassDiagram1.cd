@@ -15,14 +15,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Martins_Esercitazione1.Models.ResponsabileVenditori" Collapsed="true">
-    <Position X="4.25" Y="3.75" Width="1.5" />
+    <Position X="4.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAgABAAAAAAAA=</HashCode>
       <FileName>Models\ResponsabileVenditori.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Martins_Esercitazione1.Models.CapoOfficina" Collapsed="true">
-    <Position X="2" Y="2.75" Width="1.5" />
+    <Position X="1.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAEAAAAgAAAAAAAAAA=</HashCode>
       <FileName>Models\CapoOfficina.cs</FileName>
@@ -43,7 +43,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Martins_Esercitazione1.Models.Meccanico" Collapsed="true">
-    <Position X="4" Y="2.5" Width="1.5" />
+    <Position X="4.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAEgAAAAAAAAAAAAIAAgAAAAAAAAAA=</HashCode>
       <FileName>Models\Meccanico.cs</FileName>
