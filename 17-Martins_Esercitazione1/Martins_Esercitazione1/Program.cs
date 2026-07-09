@@ -141,7 +141,7 @@ namespace Martins_Esercitazione1
                 Console.WriteLine($"{"Ordine",-12} {"Data",-12} {"Totale",-12}");
                 Console.WriteLine(new string('-', 36));
                 foreach (Ordine o in ordiniTrimestre)
-                    Console.WriteLine($"{o.Codice,-12} {o.Data:dd/MM/yyyy,-12} {o.Totale(),10:F2} euro");
+                    Console.WriteLine($"{o.Codice,-12} {o.Data,-12:dd/MM/yyyy} {o.Totale(),10:F2} euro");
                 Console.WriteLine(new string('-', 36));
                 Console.WriteLine($"{"TOTALE IVA ESCLUSA:",-30} {totIvaEsclusa,10:F2} euro");
                 Console.WriteLine($"{"IVA (22%):",-30} {iva,10:F2} euro");
