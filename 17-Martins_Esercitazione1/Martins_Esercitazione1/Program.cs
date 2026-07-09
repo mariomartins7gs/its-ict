@@ -15,7 +15,7 @@ namespace Martins_Esercitazione1
         static void Main(string[] args)
         {
             // ── Seed Data ──
-            SeedData out seed = new();
+            SeedData seed = new();
             ResponsabileVenditori respVenditori = seed.Responsabile;
             CapoOfficina capo = seed.Capo;
             List<Venditore> venditori = seed.Venditori;
