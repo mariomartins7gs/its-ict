@@ -30,3 +30,7 @@ packages/
 .idea/
 *.swp
 *~
+
+# Generated output files (runtime)
+**/File/*.csv
+**/file/*.txt
