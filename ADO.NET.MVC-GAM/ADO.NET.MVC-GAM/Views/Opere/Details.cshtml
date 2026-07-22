@@ -1,0 +1,44 @@
+@model Opera
+
+@{
+    ViewData["Title"] = "Dettagli opera";
+}
+
+<h1>Dettagli opera</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Inventario)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Inventario)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Titolo_soggetto)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Titolo_soggetto)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.IdAutoreNavigation)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.IdAutoreNavigation!.Nominativo)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Ambito_culturale)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Ambito_culturale)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Datazione)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Datazione)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.lsreferenceby)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.lsreferenceby)</dd>
+    </dl>
+
+    @if (Model.OperaMateriali.Any())
+    {
+        <h4>Materiali</h4>
+        <ul>
+            @foreach (var om in Model.OperaMateriali)
+            {
+                <li>@om.IdMaterialeNavigation.Denominazione</li>
+            }
+        </ul>
+    }
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Modifica</a>
+    <a asp-action="Index" class="btn btn-secondary">Torna all'elenco</a>
+</div>

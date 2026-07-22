@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Benvenuti in GAM</h1>
+    <p>Gestione della collezione della <strong>Galleria Arte - Palazzo Madama</strong>.</p>
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Opere</h5>
+                    <p class="card-text">Gestisci il catalogo delle opere d'arte</p>
+                    <a asp-controller="Opere" asp-action="Index" class="btn btn-primary">Vai alle Opere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Autori</h5>
+                    <p class="card-text">Gestisci gli autori delle opere</p>
+                    <a asp-controller="Autori" asp-action="Index" class="btn btn-primary">Vai agli Autori</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Materiali</h5>
+                    <p class="card-text">Gestisci i materiali delle opere</p>
+                    <a asp-controller="Materiali" asp-action="Index" class="btn btn-primary">Vai ai Materiali</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

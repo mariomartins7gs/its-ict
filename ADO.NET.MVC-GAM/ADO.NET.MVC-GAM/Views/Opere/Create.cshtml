@@ -1,0 +1,64 @@
+@model Opera
+
+@{
+    ViewData["Title"] = "Nuova opera";
+}
+
+<h1>Nuova opera</h1>
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Inventario" class="form-label"></label>
+        <input asp-for="Inventario" class="form-control" />
+        <span asp-validation-for="Inventario" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="IdAutore" class="form-label"></label>
+        <select asp-for="IdAutore" class="form-select" asp-items="ViewBag.IdAutore">
+            <option value="">-- Seleziona autore --</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Ambito_culturale" class="form-label"></label>
+        <input asp-for="Ambito_culturale" class="form-control" />
+        <span asp-validation-for="Ambito_culturale" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Datazione" class="form-label"></label>
+        <input asp-for="Datazione" class="form-control" />
+        <span asp-validation-for="Datazione" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Titolo_soggetto" class="form-label"></label>
+        <input asp-for="Titolo_soggetto" class="form-control" />
+        <span asp-validation-for="Titolo_soggetto" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Materiali</label>
+        <select name="materialiSelezionati" class="form-select" multiple asp-items="ViewBag.Materiali">
+        </select>
+        <small class="text-muted">Seleziona uno o più materiali (tenere premuto Ctrl)</small>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Immagine" class="form-label"></label>
+        <input asp-for="Immagine" class="form-control" />
+        <span asp-validation-for="Immagine" class="text-danger"></span>
+    </div>
+
+    <div>
+        <input type="submit" value="Salva" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Annulla</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

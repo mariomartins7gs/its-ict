@@ -1,0 +1,26 @@
+@model Autore
+
+@{
+    ViewData["Title"] = "Elimina autore";
+}
+
+<h1>Elimina autore</h1>
+
+<div class="alert alert-danger">
+    <h4>Sei sicuro di voler eliminare questo autore?</h4>
+</div>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Id)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Id)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Nominativo)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Nominativo)</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="submit" value="Elimina" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Annulla</a>
+    </form>
+</div>

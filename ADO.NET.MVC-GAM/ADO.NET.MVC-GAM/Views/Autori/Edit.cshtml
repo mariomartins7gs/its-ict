@@ -1,0 +1,27 @@
+@model Autore
+
+@{
+    ViewData["Title"] = "Modifica autore";
+}
+
+<h1>Modifica autore</h1>
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label asp-for="Nominativo" class="form-label"></label>
+        <input asp-for="Nominativo" class="form-control" />
+        <span asp-validation-for="Nominativo" class="text-danger"></span>
+    </div>
+
+    <div>
+        <input type="submit" value="Salva" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Annulla</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

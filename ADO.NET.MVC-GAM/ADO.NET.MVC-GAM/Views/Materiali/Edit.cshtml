@@ -1,0 +1,27 @@
+@model Materiale
+
+@{
+    ViewData["Title"] = "Modifica materiale";
+}
+
+<h1>Modifica materiale</h1>
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label asp-for="Denominazione" class="form-label"></label>
+        <input asp-for="Denominazione" class="form-control" />
+        <span asp-validation-for="Denominazione" class="text-danger"></span>
+    </div>
+
+    <div>
+        <input type="submit" value="Salva" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Annulla</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

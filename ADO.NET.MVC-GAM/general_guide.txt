@@ -1,0 +1,29 @@
+Entity Framework Core: metodo Database First
+
+Entity Framework Core - Stringa di connessione da inserire in Console di Gestione Pacchetti NuGet
+
+Scaffold-DbContext "Server=DBMSInstance;Database=DatabaseName;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+Registrazione del servizio in Program.cs
+
+
+
+//registrazione del servizio per accesso al database tramite Entity Framework Core
+builder.Services.AddDbContext<AnagraficaContext>(options =>
+    options.UseSqlServer());
+
+Esercizio - Fix
+
+Warning post Scaffolding di EntityFrameworkCore
+
+In Models creare la classe ...Context che eredita da DbContext e sostituire il metodo OnConfiguring con quanto segue: 
+
+	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+	{
+		IConfigurationRoot configuration = new ConfigurationBuilder()
+			.SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+			.AddJsonFile("appsettings.json")
+			.Build();
+		optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+	}
+

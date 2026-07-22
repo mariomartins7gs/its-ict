@@ -1,0 +1,32 @@
+@model Autore
+
+@{
+    ViewData["Title"] = "Dettagli autore";
+}
+
+<h1>Dettagli autore</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Id)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Id)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Nominativo)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Nominativo)</dd>
+    </dl>
+
+    @if (Model.Opere.Any())
+    {
+        <h4>Opere (@Model.Opere.Count)</h4>
+        <ul>
+            @foreach (var opera in Model.Opere)
+            {
+                <li>@opera.Titolo_soggetto (Inv. @opera.Inventario)</li>
+            }
+        </ul>
+    }
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Modifica</a>
+    <a asp-action="Index" class="btn btn-secondary">Torna all'elenco</a>
+</div>
