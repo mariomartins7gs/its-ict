@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PrestitiBibliotecaMVC.Models.Prestito>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataPrestito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataRestituzione)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdLibroNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatricolaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataPrestito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataRestituzione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdLibroNavigation.Titolo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatricolaNavigation.Cognome)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { idLibro=item.IdLibro, matricola=item.Matricola }) |
+                @Html.ActionLink("Details", "Details", new { idLibro=item.IdLibro, matricola=item.Matricola }) |
+                @Html.ActionLink("Delete", "Delete", new { idLibro=item.IdLibro, matricola=item.Matricola })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,71 @@
+﻿@model PrestitiBibliotecaMVC.Models.Studente
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Studente</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cognome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cognome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Classe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Classe)
+        </dd>
+    </dl>
+</div>
+
+<h4>Prestiti</h4>
+@if (Model.Prestiti.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Libro</th>
+                <th>Data Prestito</th>
+                <th>Data Restituzione</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var prestito in Model.Prestiti)
+            {
+                <tr>
+                    <td>@prestito.IdLibroNavigation.Titolo</td>
+                    <td>@prestito.DataPrestito.ToShortDateString()</td>
+                    <td>@(prestito.DataRestituzione?.ToShortDateString() ?? "-")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nessun prestito.</p>
+}
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Matricola">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
