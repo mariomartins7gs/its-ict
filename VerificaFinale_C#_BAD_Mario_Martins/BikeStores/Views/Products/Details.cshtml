@@ -1,0 +1,54 @@
+@model BikeStores.Models.Product
+
+@{
+    ViewData["Title"] = Model.ProductName;
+}
+
+<h1>@Model.ProductName</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Product ID</dt>
+            <dd class="col-sm-9">@Model.ProductId</dd>
+
+            <dt class="col-sm-3">Brand</dt>
+            <dd class="col-sm-9">@Model.Brand?.BrandName</dd>
+
+            <dt class="col-sm-3">Category</dt>
+            <dd class="col-sm-9">@Model.Category?.CategoryName</dd>
+
+            <dt class="col-sm-3">Model Year</dt>
+            <dd class="col-sm-9">@Model.ModelYear</dd>
+
+            <dt class="col-sm-3">List Price</dt>
+            <dd class="col-sm-9">@Model.ListPrice.ToString("C")</dd>
+        </dl>
+    </div>
+</div>
+
+@if (Model.Stocks != null && Model.Stocks.Any())
+{
+    <h3>Stock Availability</h3>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Store</th>
+                <th class="text-end">Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stock in Model.Stocks)
+            {
+                <tr>
+                    <td>@stock.Store?.StoreName</td>
+                    <td class="text-end">@stock.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

@@ -1,0 +1,86 @@
+@model BikeStores.Models.Store
+
+@{
+    ViewData["Title"] = Model.StoreName;
+}
+
+<h1>@Model.StoreName</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Store ID</dt>
+            <dd class="col-sm-9">@Model.StoreId</dd>
+
+            <dt class="col-sm-3">Phone</dt>
+            <dd class="col-sm-9">@Model.Phone</dd>
+
+            <dt class="col-sm-3">Email</dt>
+            <dd class="col-sm-9">@Model.Email</dd>
+
+            <dt class="col-sm-3">Street</dt>
+            <dd class="col-sm-9">@Model.Street</dd>
+
+            <dt class="col-sm-3">City</dt>
+            <dd class="col-sm-9">@Model.City</dd>
+
+            <dt class="col-sm-3">State</dt>
+            <dd class="col-sm-9">@Model.State</dd>
+
+            <dt class="col-sm-3">Zip Code</dt>
+            <dd class="col-sm-9">@Model.ZipCode</dd>
+        </dl>
+    </div>
+</div>
+
+@if (Model.Staff != null && Model.Staff.Any())
+{
+    <h3>Staff</h3>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var staff in Model.Staff)
+            {
+                <tr>
+                    <td>@staff.FirstName</td>
+                    <td>@staff.LastName</td>
+                    <td>@staff.Email</td>
+                    <td>@staff.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (Model.Stocks != null && Model.Stocks.Any())
+{
+    <h3>Stock</h3>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Product</th>
+                <th class="text-end">Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stock in Model.Stocks)
+            {
+                <tr>
+                    <td>@stock.Product?.ProductName</td>
+                    <td class="text-end">@stock.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

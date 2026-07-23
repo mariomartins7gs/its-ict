@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to BikeStores</h1>
+    <p class="lead">Browse our product catalog, store directory, and order management system.</p>
+    <div class="row mt-5">
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Products</h5>
+                    <p class="card-text">View our complete product catalog with brands, categories, and pricing.</p>
+                    <a asp-controller="Products" asp-action="Index" class="btn btn-primary">Browse Products</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Stores</h5>
+                    <p class="card-text">Find our store locations with contact information and details.</p>
+                    <a asp-controller="Stores" asp-action="Index" class="btn btn-primary">View Stores</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Orders</h5>
+                    <p class="card-text">Track customer orders and view detailed order information.</p>
+                    <a asp-controller="Orders" asp-action="Index" class="btn btn-primary">View Orders</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+@model BikeStores.Models.Customer
+
+@{
+    ViewData["Title"] = $"{Model.FirstName} {Model.LastName}";
+}
+
+<h1>@Model.FirstName @Model.LastName</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Customer ID</dt>
+            <dd class="col-sm-9">@Model.CustomerId</dd>
+
+            <dt class="col-sm-3">First Name</dt>
+            <dd class="col-sm-9">@Model.FirstName</dd>
+
+            <dt class="col-sm-3">Last Name</dt>
+            <dd class="col-sm-9">@Model.LastName</dd>
+
+            <dt class="col-sm-3">Email</dt>
+            <dd class="col-sm-9">@Model.Email</dd>
+
+            <dt class="col-sm-3">Phone</dt>
+            <dd class="col-sm-9">@Model.Phone</dd>
+
+            <dt class="col-sm-3">Street</dt>
+            <dd class="col-sm-9">@Model.Street</dd>
+
+            <dt class="col-sm-3">City</dt>
+            <dd class="col-sm-9">@Model.City</dd>
+
+            <dt class="col-sm-3">State</dt>
+            <dd class="col-sm-9">@Model.State</dd>
+
+            <dt class="col-sm-3">Zip Code</dt>
+            <dd class="col-sm-9">@Model.ZipCode</dd>
+        </dl>
+    </div>
+</div>
+
+@if (Model.Orders != null && Model.Orders.Any())
+{
+    <h3>Orders</h3>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.Orders)
+            {
+                <tr>
+                    <td>@order.OrderId</td>
+                    <td>@order.OrderDate.ToString("yyyy-MM-dd")</td>
+                    <td>
+                        @switch (order.OrderStatus)
+                        {
+                            case 1: <span>Pending</span>; break;
+                            case 2: <span>Processing</span>; break;
+                            case 3: <span>Rejected</span>; break;
+                            case 4: <span>Completed</span>; break;
+                            default: <span>Unknown</span>; break;
+                        }
+                    </td>
+                    <td>
+                        <a asp-controller="Orders" asp-action="Details" asp-route-id="@order.OrderId" class="btn btn-sm btn-info">View</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

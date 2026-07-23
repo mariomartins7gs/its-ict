@@ -1,0 +1,74 @@
+@model BikeStores.Models.Staff
+
+@{
+    ViewData["Title"] = $"{Model.FirstName} {Model.LastName}";
+}
+
+<h1>@Model.FirstName @Model.LastName</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Staff ID</dt>
+            <dd class="col-sm-9">@Model.StaffId</dd>
+
+            <dt class="col-sm-3">First Name</dt>
+            <dd class="col-sm-9">@Model.FirstName</dd>
+
+            <dt class="col-sm-3">Last Name</dt>
+            <dd class="col-sm-9">@Model.LastName</dd>
+
+            <dt class="col-sm-3">Email</dt>
+            <dd class="col-sm-9">@Model.Email</dd>
+
+            <dt class="col-sm-3">Phone</dt>
+            <dd class="col-sm-9">@Model.Phone</dd>
+
+            <dt class="col-sm-3">Active</dt>
+            <dd class="col-sm-9">@(Model.Active == 1 ? "Yes" : "No")</dd>
+
+            <dt class="col-sm-3">Store</dt>
+            <dd class="col-sm-9">@Model.Store?.StoreName</dd>
+
+            <dt class="col-sm-3">Manager</dt>
+            <dd class="col-sm-9">
+                @if (Model.Manager != null)
+                {
+                    @($"{Model.Manager.FirstName} {Model.Manager.LastName}")
+                }
+                else
+                {
+                    <span class="text-muted">None</span>
+                }
+            </dd>
+        </dl>
+    </div>
+</div>
+
+@if (Model.InverseManager != null && Model.InverseManager.Any())
+{
+    <h3>Team Members</h3>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var member in Model.InverseManager)
+            {
+                <tr>
+                    <td>@member.FirstName</td>
+                    <td>@member.LastName</td>
+                    <td>@member.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

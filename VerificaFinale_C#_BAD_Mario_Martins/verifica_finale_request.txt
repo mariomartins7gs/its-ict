@@ -1,0 +1,48 @@
+
+Obiettivo della verifica: sondare il livello di competenze e abilità sulle basi della programmazione OOP e in ambiente web
+
+Descrizione della prova: Sviluppo web app in ASP.NET MVC / C# e accesso al database MS SQL Server 2025
+
+Testo del problema
+Si consideri il backup del database: BikeStores.
+
+Utilizzare Microsoft Visual Studio per creare una soluzione vuota denominata: BikeStoresProject
+
+Aggiungere alla soluzione BikeStoresProject un nuovo progetto App Web ASP.NET Core MVC, con autenticazione Nessuna, https e  non usare istruzioni di primo livello e denominato BikeStores. 
+
+Nel footer inserire i propri dati, dopo il copyright, ad esempio: Realizzato da Cognome Nome, Corso: Business Application Developer. 
+
+Unica lingua disponibile per la visualizzazione dei contenuti dell'applicazione è Inglese.
+
+Aggiungere le librerie necessarie per Microsoft Entity Framework Core. Effettuare l'accesso al database come utente di Windows e generare lo scaffolding delle classi object model. Correggere il bug #warning come opportuno.
+
+Registrare il servizio BikeStoresContext. 
+
+Non sono ammesse le operazioni CRUD.
+
+Dalla barra di navigazione del layout è possibile visualizzare l'elenco dei prodotti alla voce Products in ordine alfabetico crescente. Visualizzare in elenco solo i seguenti dati: nome del prodotto, marca, categoria, il prezzo. Per ogni prodotto predisporre la visualizzazione in dettaglio con tutti i dati necessari. Creare il servizio per visualizzare l'elenco dei prodotti di una certa marca oppure di un certo prodotto o una categoria. La ricerca deve avvenire anche con inserimento parziale del testo di ricerca
+
+
+Dalla barra di navigazione del layout è possibile visualizzare l'elenco dei negozi alla voce Stores. Di ogni negozio nella lista sono visibili solo pochi dati (nome, telefono, email, città e stato). Il dettaglio fornisce l'elenco dettagliato del negozio. Creare il servizio per visualizzare l'elenco dei negozi di una certa città oppure di un certo stato. La ricerca deve avvenire anche con inserimento parziale del testo di ricerca
+
+Dalla barra di navigazione del layout è possibile visualizzare l'elenco dei dipendenti che lavorano nei negozi. Di questi dipendenti sono reperibili solo i seguenti dati: nome, cognome, email, telefono. Per ogni dipendente è disponibile il dettaglio con tutti i dati, cliccando sul link Details. Creare il servizio per visualizzare l'elenco dei dipendenti per nome oppure cognome. La ricerca deve avvenire anche con inserimento parziale del testo di ricerca
+
+Creare similmente a quanto esposto prima i servizi per visualizzare l'elenco dei clienti, degli ordini e per ogni ordine visualizzare il dettaglio ordine. E' gradita la ricerca su dati, anche parziali, a scelta del candidato.
+
+
+Consegna
+
+Per effettuare la consegna dell'esame finale si chiede di effettuare il zip della cartella dell'intero progetto (comprensivo di file .slnx).
+
+Il file zip deve essere salvato come Studente_EsameFinale.zip, dove Studente è il cognome dello studente. Nel caso ci fossero studenti con lo stesso cognome allora aggiungere anche l'iniziale del Nome.
+
+Metodologia della valutazione: Voto 30/30
+
+Griglia di valutazione
+Descrittore	Punti
+Classi (MVC)	12
+Strutture Dati (Database, Entity Framework, Liste, ecc...)	5
+Interfaccia grafica	9
+Funzionalità	4
+Totale	30
+

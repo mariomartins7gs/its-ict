@@ -1,0 +1,101 @@
+@model BikeStores.Models.Order
+
+@{
+    ViewData["Title"] = $"Order #{Model.OrderId}";
+}
+
+<h1>Order #@Model.OrderId</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Order ID</dt>
+            <dd class="col-sm-9">@Model.OrderId</dd>
+
+            <dt class="col-sm-3">Customer</dt>
+            <dd class="col-sm-9">
+                <a asp-controller="Customers" asp-action="Details" asp-route-id="@Model.CustomerId">
+                    @($"{Model.Customer?.FirstName} {Model.Customer?.LastName}")
+                </a>
+            </dd>
+
+            <dt class="col-sm-3">Order Status</dt>
+            <dd class="col-sm-9">
+                @switch (Model.OrderStatus)
+                {
+                    case 1: <span class="badge bg-warning">Pending</span>; break;
+                    case 2: <span class="badge bg-info">Processing</span>; break;
+                    case 3: <span class="badge bg-danger">Rejected</span>; break;
+                    case 4: <span class="badge bg-success">Completed</span>; break;
+                    default: <span class="badge bg-secondary">Unknown</span>; break;
+                }
+            </dd>
+
+            <dt class="col-sm-3">Order Date</dt>
+            <dd class="col-sm-9">@Model.OrderDate.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-3">Required Date</dt>
+            <dd class="col-sm-9">@Model.RequiredDate.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-3">Shipped Date</dt>
+            <dd class="col-sm-9">
+                @(Model.ShippedDate.HasValue ? Model.ShippedDate.Value.ToString("yyyy-MM-dd") : "Not shipped yet")
+            </dd>
+
+            <dt class="col-sm-3">Store</dt>
+            <dd class="col-sm-9">@Model.Store?.StoreName</dd>
+
+            <dt class="col-sm-3">Staff</dt>
+            <dd class="col-sm-9">@($"{Model.Staff?.FirstName} {Model.Staff?.LastName}")</dd>
+        </dl>
+    </div>
+</div>
+
+<h3>Order Items</h3>
+@if (Model.OrderItems != null && Model.OrderItems.Any())
+{
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Item</th>
+                <th>Product</th>
+                <th class="text-end">Quantity</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">Discount</th>
+                <th class="text-end">Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderItems)
+            {
+                <tr>
+                    <td>@item.ItemId</td>
+                    <td>
+                        <a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProductId">
+                            @item.Product?.ProductName
+                        </a>
+                    </td>
+                    <td class="text-end">@item.Quantity</td>
+                    <td class="text-end">@item.ListPrice.ToString("C")</td>
+                    <td class="text-end">@item.Discount.ToString("P0")</td>
+                    @{
+                        var subtotal = item.Quantity * item.ListPrice * (1 - item.Discount);
+                    }
+                    <td class="text-end">@subtotal.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot class="table-secondary">
+            <tr>
+                <th colspan="5" class="text-end">Total:</th>
+                <th class="text-end">
+                    @Model.OrderItems.Sum(i => i.Quantity * i.ListPrice * (1 - i.Discount)).ToString("C")
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+}
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
